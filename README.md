@@ -5,8 +5,8 @@
 - 如果想聚焦于代码实现，请查看"R代码"文件夹
 
 ## 2、内容概览
-标橙部分的R代码为个人实现，其余检验代码使用内置库或第三方模块
-<img width="1481" height="1102" alt="image" src="https://github.com/user-attachments/assets/5b0a99a5-6c79-431f-90df-dec2f11e7590" />
+<img width="737" height="523" alt="image" src="https://github.com/user-attachments/assets/95ef3f9e-172e-4f36-81b9-076129cb87b2" />
+
 
 
 
