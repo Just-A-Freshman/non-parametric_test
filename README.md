@@ -5,6 +5,8 @@
 - 如果想聚焦于代码实现，请查看"R代码"文件夹
 
 ## 2、内容概览
+标橙部分的R代码为个人实现。其余检验代码均使用内置库或第三方模块(懒得重复造轮子了)
+当前内容尚未完善，待更新...
 <img width="737" height="523" alt="image" src="https://github.com/user-attachments/assets/95ef3f9e-172e-4f36-81b9-076129cb87b2" />
 
 
