@@ -23,27 +23,25 @@ run.test <- function(
 
     if (exact) {
       max_runs <-  2 * min(n0, n1) + (n0 != n1)
-        prob <- rep(0, max_runs)
+        cases <- rep(0, max_runs)
         for (r in 2:max_runs) {
           k <- r %/% 2
-          sample_space <-  choose(n0 + n1, n0)
           if (r %% 2 == 0) {
-            term = 2 * choose(n0 - 1, k - 1) * choose(n1 - 1, k - 1)
-            prob[r] <- term / sample_space
+            cases[r] <- 2 * choose(n0 - 1, k - 1) * choose(n1 - 1, k - 1)
           } else {
             term1 <- choose(n0 - 1, k - 1) * choose(n1 - 1, k)
             term2 <- choose(n0 - 1, k) * choose(n1 - 1, k - 1)
-            prob[r] <- (term1 + term2) / sample_space
+            cases[r] <- term1 + term2
           }
         }
-        lower_tail <-  sum(prob[2:runs])
-        upper_tail <-  sum(prob[runs:max_runs])
+        sample_space <-  choose(n0 + n1, n0)
+        lower_tail <-  sum(cases[2:runs]) / sample_space
+        upper_tail <-  sum(cases[runs:max_runs]) / sample_space
       }
     else{
       z <- (runs - mu_r) / sqrt(var_r)
       lower_tail = pnorm(z)
       upper_tail = pnorm(z, lower.tail = FALSE)
-      print(lower_tail)
     }
 
     p.value <- switch(
@@ -79,7 +77,8 @@ binMixData <- function(x, y){
 
 if (sys.nframe() == 0) {
   x = c(1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1)
-  result <- run.test(x)
+  result <- run.test(x, exact = T)
+  result
 }
 
 

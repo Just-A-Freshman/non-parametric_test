@@ -37,24 +37,24 @@ run.test <- function(
       n0 <- n_i[1]
       n1 <- n_i[2]
       max_runs <- 2 * min(n0, n1) + (n0 != n1)
-      prob <- numeric(max_runs)
+      cases <- numeric(max_runs)
 
       for (r in 2:max_runs) {
         k_val <- r %/% 2
-        sample_space <- choose(n0 + n1, n0)
+
 
         if (r %% 2 == 0) {
-          term <- 2 * choose(n0 - 1, k_val - 1) * choose(n1 - 1, k_val - 1)
-          prob[r] <- term / sample_space
+          cases[r] <- 2 * choose(n0 - 1, k_val - 1) * choose(n1 - 1, k_val - 1)
         } else {
           term1 <- choose(n0 - 1, k_val - 1) * choose(n1 - 1, k_val)
           term2 <- choose(n0 - 1, k_val) * choose(n1 - 1, k_val - 1)
-          prob[r] <- (term1 + term2) / sample_space
+          cases[r] <- term1 + term2
         }
       }
 
-      lower_tail <- sum(prob[2:runs])
-      upper_tail <- sum(prob[runs:max_runs])
+      sample_spaces <- choose(n0 + n1, n0)
+      lower_tail <- sum(cases[2:runs]) / sample_spaces
+      upper_tail <- sum(cases[runs:max_runs]) / sample_spaces
     }
   }
 
