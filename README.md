@@ -7,7 +7,8 @@
 ## 2、内容概览
 标橙部分的R代码为个人实现。其余检验代码均使用内置库或第三方模块(懒得重复造轮子了)
 当前内容尚未完善，待更新...
-<img width="765" height="582" alt="image" src="https://github.com/user-attachments/assets/e16c7044-566d-4888-8e03-55250706efa3" />
+<img width="765" height="756" alt="image" src="https://github.com/user-attachments/assets/5d84bc64-ed5e-4b18-adb5-acc3b2d70fa9" />
+
 
 
 
