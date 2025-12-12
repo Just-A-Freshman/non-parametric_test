@@ -6,7 +6,7 @@ if (sys.nframe() == 0) {
 
   # 二、卡方独立性检验
   ## 每组观测频数至少大于5
-  data <- matrix(c(50, 30, 40, 60), nrow = 2)
+  data <- matrix(c(8, 2, 7, 23), nrow = 2)
   chisq.test(data)
 
   ## 如果观测频数太小，使用fisher检验
